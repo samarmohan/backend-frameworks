@@ -22,6 +22,7 @@ mongoose
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
+		useFindAndModify: true,
 	})
 	.then(() => console.log("Connected to database..."))
 	.catch((err: Error) => console.log(err));
@@ -44,7 +45,7 @@ const Todo = mongoose.model("Todos", TodoSchema);
 
 // POST
 // Adds a todo
-app.post("/api/todos/create/", (req: Request, res: Response) => {
+app.post("/api/todos/", (req: Request, res: Response) => {
 	const newTodo: Document = new Todo({
 		name: req.body.name,
 		isComplete: req.body.isComplete,
@@ -66,26 +67,24 @@ app.get("/api/todos/", (req: Request, res: Response) => {
 
 // GET
 // Get a single todo
-app.get("/api/todos/:name/detail/", (req: Request, res: Response) => {
-	Todo.findOne({ name: req.params.name })
+app.get("/api/todos/:id/", (req: Request, res: Response) => {
+	Todo.findById(req.params.id)
 		.then((singleTodo: Document | null) => res.json(singleTodo))
 		.catch((err: Error) => res.json(err));
 });
 
 // PUT
 // Update a product
-app.put("/api/todos/:name/update/", (req: Request, res: Response) => {
-	Todo.findOneAndReplace({ name: req.params.name }, req.body, {
-		new: true,
-	})
+app.put("/api/todos/:id/", (req: Request, res: Response) => {
+	Todo.findByIdAndUpdate(req.params.id, req.body)
 		.then((todoToBeUpdated: Document | null) => res.json(todoToBeUpdated))
 		.catch((err: Error) => res.json(err));
 });
 
 // DELETE
 // Delete a product
-app.delete("/api/todos/:name/delete/", (req, res) => {
-	Todo.findOneAndDelete({ name: req.params.id })
+app.delete("/api/todos/:id/", (req: Request, res: Response) => {
+	Todo.findByIdAndDelete(req.params.id)
 		.then((todoToBeDeleted: Document | null) => res.json(todoToBeDeleted))
 		.catch((err: Error) => res.json(err));
 });

@@ -47,7 +47,7 @@ todos_schema = TodoSchema(many=True)
 
 # POST
 # Add a todo
-@app.route("/api/todos/create/", methods=["POST"])
+@app.route("/api/todos/", methods=["POST"])
 def add_todo():
     name = request.json["name"]
     isComplete = request.json["isComplete"]
@@ -71,7 +71,7 @@ def get_all_todos():
 
 # GET
 # Get a single todo
-@app.route("/api/todos/<id>/detail/", methods=["GET"])
+@app.route("/api/todos/<id>/", methods=["GET"])
 def get_single_todo(id):
     single_todo = Todo.query.get(id)
     return todo_schema.jsonify(single_todo)
@@ -79,7 +79,7 @@ def get_single_todo(id):
 
 # PUT
 # Update a todo
-@app.route("/api/todos/<id>/update/", methods=["PUT"])
+@app.route("/api/todos/<id>/", methods=["PUT"])
 def update_product(id):
     todo_to_be_updated = Todo.query.get(id)
 
@@ -96,7 +96,7 @@ def update_product(id):
 
 # DELETE
 # Delete a todo
-@app.route("/api/todos/<id>/delete/", methods=["DELETE"])
+@app.route("/api/todos/<id>/", methods=["DELETE"])
 def delete_product(id):
     todo_to_be_deleted = Todo.query.get(id)
 

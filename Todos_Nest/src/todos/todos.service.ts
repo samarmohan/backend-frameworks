@@ -9,11 +9,11 @@ export class TodosService {
 	constructor(@InjectModel("Todo") private readonly todoModel: Model<Todo>) {}
 
 	async findAll(): Promise<Todo[]> {
-		return await this.todoModel.find();
+		return this.todoModel.find();
 	}
 
-	async findOne(name: string): Promise<Todo> {
-		return await this.todoModel.findOne({ name: name });
+	async findOne(id: string): Promise<Todo> {
+		return this.todoModel.findById(id);
 	}
 
 	async create(todoToBeCreated: CreateTodoDTO): Promise<Todo> {
@@ -21,15 +21,11 @@ export class TodosService {
 		return await newTodo.save();
 	}
 
-	async delete(name: string): Promise<Todo> {
-		return await this.todoModel.findOneAndRemove({ name });
+	async delete(id: string): Promise<Todo> {
+		return this.todoModel.findByIdAndRemove(id);
 	}
 
-	async update(name: string, todoToBeUpdated: Todo): Promise<Todo> {
-		return await this.todoModel.findOneAndReplace(
-			{ name },
-			todoToBeUpdated,
-			{ new: true }
-		);
+	async update(id: string, todoToBeUpdated: Todo): Promise<Todo> {
+		return this.todoModel.findByIdAndUpdate(id, todoToBeUpdated);
 	}
 }

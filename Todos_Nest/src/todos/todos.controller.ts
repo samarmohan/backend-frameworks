@@ -20,23 +20,23 @@ export class TodosController {
 		return await this.todosService.findAll();
 	}
 
-	@Get(":name/detail/")
-	findOne(@Param("name") name): Promise<Todo> {
-		return this.todosService.findOne(name);
+	@Get(":id/")
+	findOne(@Param("id") id): Promise<Todo> {
+		return this.todosService.findOne(id);
 	}
 
-	@Post("create/")
+	@Post("")
 	create(@Body() todoToBeCreated: CreateTodoDTO): Promise<Todo> {
 		return this.todosService.create(todoToBeCreated);
 	}
 
-	@Delete(":name/delete/")
-	delete(@Param("name") name): Promise<Todo> {
-		return this.todosService.delete(name);
+	@Delete(":id/")
+	delete(@Param("id") id): Promise<Todo> {
+		return this.todosService.delete(id);
 	}
 
-	@Put(":name/update/")
-	update(@Param("name") name, @Body() todoToBeUpdated: Todo): Promise<Todo> {
-		return this.todosService.update(name, todoToBeUpdated);
+	@Put(":id/")
+	update(@Param("id") id, @Body() todoToBeUpdated: Todo): Promise<Todo> {
+		return this.todosService.update(id, todoToBeUpdated);
 	}
 }

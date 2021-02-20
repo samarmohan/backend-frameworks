@@ -3,26 +3,11 @@ from .serializers import TodoSerializer
 from .models import Todo
 
 
-class AddTodoAPI(generics.CreateAPIView):
+class ListCreateTodoAPI(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 
-class ListTodoAPI(generics.ListAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
-
-
-class RetrieveTodoAPI(generics.RetrieveAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
-
-
-class UpdateTodoAPI(generics.RetrieveUpdateAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = TodoSerializer
-
-
-class DeleteTodoAPI(generics.RetrieveDestroyAPIView):
+class RetrieveUpdateDestroyTodoAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer

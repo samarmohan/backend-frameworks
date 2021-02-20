@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import AddTodoAPI, ListTodoAPI, RetrieveTodoAPI, UpdateTodoAPI, DeleteTodoAPI
+from api.views import ListCreateTodoAPI, RetrieveUpdateDestroyTodoAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/todos/create/', AddTodoAPI.as_view()),
-    path('api/todos/', ListTodoAPI.as_view()),
-    path('api/todos/<pk>/detail/', RetrieveTodoAPI.as_view()),
-    path('api/todos/<pk>/update/', UpdateTodoAPI.as_view()),
-    path('api/todos/<pk>/delete/', DeleteTodoAPI.as_view()),
+    path('api/todos/', ListCreateTodoAPI.as_view()),
+    path('api/todos/<pk>/', RetrieveUpdateDestroyTodoAPI.as_view()),
 ]

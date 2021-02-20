@@ -7,99 +7,99 @@ using Todos_ASPNETCORE.Models;
 
 namespace Todos_ASPNETCORE.Controllers
 {
-    [Route("api/[controller]/")]
-    [ApiController]
-    public class TodosController : ControllerBase
-    {
-        private readonly TodoContext _context;
+	[Route("api/[controller]/")]
+	[ApiController]
+	public class TodosController : ControllerBase
+	{
+		private readonly TodoContext _context;
 
-        public TodosController(TodoContext context)
-        {
-            _context = context;
-        }
+		public TodosController(TodoContext context)
+		{
+			_context = context;
+		}
 
-        // GET: api/Todos
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Todo>>> GetTodos()
-        {
-            return await _context.Todos.ToListAsync();
-        }
+		// GET: api/Todos
+		[HttpGet]
+		public async Task<ActionResult<IEnumerable<Todo>>> GetTodos()
+		{
+			return await _context.Todos.ToListAsync();
+		}
 
 		// GET: api/Todos/5
-		[HttpGet("{id}/detail/")]
-        public async Task<ActionResult<Todo>> GetTodo(long id)
-        {
-            var todo = await _context.Todos.FindAsync(id);
+		[HttpGet("{id}/")]
+		public async Task<ActionResult<Todo>> GetTodo(long id)
+		{
+			var todo = await _context.Todos.FindAsync(id);
 
-            if (todo == null)
-            {
-                return NotFound();
-            }
+			if (todo == null)
+			{
+				return NotFound();
+			}
 
-            return todo;
-        }
+			return todo;
+		}
 
-        // PUT: api/Todos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}/update/")]
-        public async Task<IActionResult> PutTodo(long id, Todo todo)
-        {
-            if (id != todo.Id)
-            {
-                return BadRequest();
-            }
+		// PUT: api/Todos/5
+		// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+		[HttpPut("{id}/")]
+		public async Task<IActionResult> PutTodo(long id, Todo todo)
+		{
+			if (id != todo.Id)
+			{
+				return BadRequest();
+			}
 
-            _context.Entry(todo).State = EntityState.Modified;
+			_context.Entry(todo).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TodoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+			try
+			{
+				await _context.SaveChangesAsync();
+			}
+			catch (DbUpdateConcurrencyException)
+			{
+				if (!TodoExists(id))
+				{
+					return NotFound();
+				}
+				else
+				{
+					throw;
+				}
+			}
 
-            return Ok(todo);
-        }
+			return Ok(todo);
+		}
 
-        // POST: api/Todos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("create/")]
-        public async Task<ActionResult<Todo>> PostTodo(Todo todo)
-        {
-            await _context.Todos.AddAsync(todo);
-            await _context.SaveChangesAsync();
+		// POST: api/Todos
+		// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+		[HttpPost]
+		public async Task<ActionResult<Todo>> PostTodo(Todo todo)
+		{
+			await _context.Todos.AddAsync(todo);
+			await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetTodo), new { id = todo.Id }, todo);
-        }
+			return CreatedAtAction(nameof(GetTodo), new { id = todo.Id }, todo);
+		}
 
-        // DELETE: api/Todos/5
-        [HttpDelete("{id}/delete/")]
-        public async Task<IActionResult> DeleteTodo(long id)
-        {
-            var todo = await _context.Todos.FindAsync(id);
-            if (todo == null)
-            {
-                return NotFound();
-            }
+		// DELETE: api/Todos/5
+		[HttpDelete("{id}/")]
+		public async Task<IActionResult> DeleteTodo(long id)
+		{
+			var todo = await _context.Todos.FindAsync(id);
+			if (todo == null)
+			{
+				return NotFound();
+			}
 
-            _context.Todos.Remove(todo);
-            await _context.SaveChangesAsync();
+			_context.Todos.Remove(todo);
+			await _context.SaveChangesAsync();
 
-            return Ok();
-        }
+			return Ok();
+		}
 
-        private bool TodoExists(long id)
-        {
-            return _context.Todos.Any(e => e.Id == id);
-        }
-    }
+		private bool TodoExists(long id)
+		{
+			return _context.Todos.Any(e => e.Id == id);
+		}
+	}
 }
