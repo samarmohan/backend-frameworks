@@ -38,9 +38,16 @@ They connect to different databases.
     3. Folder Name: Todos_Flask
 
 -   Nest.js
+
     1. Connects to MongoDB
     2. Written in TypeScript
     3. Folder Name: Todos_Nest
+
+- Spring Boot
+
+    1. Connects to PostgreSQL
+    2. Written in Java
+    3. Folder Name: Todos_SpringBoot
 
 ### ⚡ Status ⚡
 
@@ -50,5 +57,5 @@ Nothing has been deployed yet.
 ### 🌍 Contributing 🌍
 
 Only submit issues if there is an inconsistency between APIs or if there is a serious security issue.
-Feel free to submit PRs if you fixed something I didn't know about or you added a whole other REST API, i.e. Spring Boot, Ruby on Rails, etc. 
+Feel free to submit PRs if you fixed something I didn't know about or you added a whole other REST API, i.e. Ruby on Rails, Laravel etc. 
 That would be really helpful 😁
