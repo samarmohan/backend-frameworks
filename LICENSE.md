@@ -1,21 +1,13 @@
-MIT License
+Samar Mohan's Education License
 
-Copyright (c) 2021 samarmohan
+Copyright (c) samarmohan, until 2025
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+ANY PERSON MAY USE THIS PIECE OF SOFTWARE AND ANY OTHER FILES RELATED TO IT FOR FREE.
+THIS SOFTWARE IS MEANT FOR EDUCATION.
+You may modify, distribute, and copy this software as long as you meet the REQUIREMENTS.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+REQUIREMENTS
+1. EDUCATION PURPOSES ONLY! Do not use for private or patent use.
+2. You shall give credit to the original author no matter who is viewing it, where they are viewing it from, how they are viewing it, and why they are viewing it
+3. I take no responsibility if there is a security bug or any other malware attached to this piece of software. Use at you OWN risk
