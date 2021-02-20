@@ -443,6 +443,7 @@ instance/*
 # Django stuff:
 
 # Flask stuff:
+*.sqlite3
 
 # Scrapy stuff:
 
