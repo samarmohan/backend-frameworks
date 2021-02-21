@@ -4,7 +4,7 @@
 
 ### 🚀 About 🚀
 
-I created the same (almost) REST API with 5 different backend frameworks. Django, Flask, Nest, ASP.NET Core, and Express. <br>
+I created the same (almost) REST API with 7 different backend frameworks. Django, Flask, Nest, ASP.NET Core, Spring Boot, Rails and Express. <br>
 
 These are all for educational purposes. They do not accomplish any specific task. <br>
 
@@ -48,10 +48,18 @@ They connect to different databases.
     1. Connects to PostgreSQL
     2. Written in Java
     3. Folder Name: Todos_SpringBoot
+    
+- Rails
+
+    1. Connects to PostgreSQL
+    2. Written in Ruby
+    3. Folder Name: Todos_Rails
 
 ### ⚡ Status ⚡
 
-All the APIs may not be exactly the same. I believe that some use the ID to look things up and some use the NAME of the todo. I am working on fixing this!
+Differences: The error messages and what the response is when you create/update/delete something.
+Those are impossible to change because that has to do with the core framework.
+
 Nothing has been deployed yet.
 
 ### 🌍 Contributing 🌍
@@ -77,5 +85,6 @@ Spring Boot: ☝️. You inject the JPA Repo which provides functions into the s
 
 Django: I love Django :). You need serializers, urls, and the actual API. A little too much boilerplate for something so simple. You need a third party package for this.
 
-Using Django, ASP.NET Core, Spring Boot, and Nestjs is overkill for just an API. Only use those if you are building an API and using pages.
-Since Express and Flask are easy to set up, use those for API only applications.
+Rails: This was pretty easy and fast. Ruby is a weird language. I used the CLI to create the models and wrote simple functions that do the work. 
+
+You should use Express or Flask for an API only application because they are easy to set up.
