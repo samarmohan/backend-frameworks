@@ -1,5 +1,5 @@
 # Imports
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
@@ -44,6 +44,9 @@ class TodoSchema(ma.Schema):
 todo_schema = TodoSchema()
 todos_schema = TodoSchema(many=True)
 
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
 
 # POST
 # Add a todo

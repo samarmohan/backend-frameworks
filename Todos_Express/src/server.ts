@@ -15,6 +15,7 @@ const app: Application = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+app.set("view-engine", "ejs");
 
 // Database
 mongoose
@@ -42,6 +43,10 @@ const TodoSchema = new Schema({
 });
 
 const Todo = mongoose.model("Todos", TodoSchema);
+
+app.get("/", (req: Request, res: Response) => {
+	res.render("index.ejs");
+})
 
 // POST
 // Adds a todo
