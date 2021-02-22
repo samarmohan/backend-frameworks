@@ -1,4 +1,4 @@
-class Api::TodosController < ApplicationController
+class Api::TodosController < ActionController::API
     before_action :find_todo, only: [:show, :update, :destroy]
 
     def index
