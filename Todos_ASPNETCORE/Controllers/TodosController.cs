@@ -20,7 +20,7 @@ namespace Todos_ASPNETCORE.Controllers
 
 		// GET: api/Todos
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<Todo>>> GetTodos()
+		public async Task<IEnumerable<Todo>> GetTodos()
 		{
 			return await _context.Todos.ToListAsync();
 		}
@@ -36,7 +36,7 @@ namespace Todos_ASPNETCORE.Controllers
 				return NotFound();
 			}
 
-			return todo;
+			return Ok(todo);
 		}
 
 		// PUT: api/Todos/5
@@ -94,7 +94,7 @@ namespace Todos_ASPNETCORE.Controllers
 			_context.Todos.Remove(todo);
 			await _context.SaveChangesAsync();
 
-			return Ok();
+			return Ok(todo);
 		}
 
 		private bool TodoExists(long id)

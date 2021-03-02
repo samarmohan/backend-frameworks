@@ -34,8 +34,6 @@ namespace Todos_ASPNETCORE
 				app.UseDeveloperExceptionPage();
 			}
 
-			app.UseHttpsRedirection();
-
 			app.UseRouting();
 
 			app.UseAuthorization();
