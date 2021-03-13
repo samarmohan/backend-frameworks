@@ -54,6 +54,12 @@ They connect to different databases.
     1. Connects to PostgreSQL
     2. Written in Ruby
     3. Folder Name: Todos_Rails
+    
+- Phoenix
+
+    1. Connects to PostgreSQL
+    2. Written in Elixir
+    3. Folder Name: Todos_Phoenix
 
 ### ⚡ Status ⚡
 
@@ -86,5 +92,8 @@ Spring Boot: ☝️. You inject the JPA Repo which provides functions into the s
 Django: I love Django :). You need serializers, urls, and the actual API. A little too much boilerplate for something so simple. You need a third party package for this.
 
 Rails: This was pretty easy and fast. Ruby is a weird language. I used the CLI to create the models and wrote simple functions that do the work. 
+
+Phoenix: Very similar to Ruby. There is more code, and it is more complicated, but I *loved* it.
+
 
 You should use Express or Flask for an API only application because they are easy to set up.
