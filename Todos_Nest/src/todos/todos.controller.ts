@@ -1,19 +1,12 @@
-import {
-	Controller,
-	Get,
-	Post,
-	Put,
-	Delete,
-	Body,
-	Param,
-} from "@nestjs/common";
-import { CreateTodoDTO } from "./dto/todo.dto";
-import { Todo } from "./interfaces/todo.interface";
-import { TodosService } from "./todos.service";
+import {Body, Controller, Delete, Get, Param, Post, Put,} from "@nestjs/common";
+import {CreateTodoDTO} from "./dto/todo.dto";
+import {Todo} from "./interfaces/todo.interface";
+import {TodosService} from "./todos.service";
 
 @Controller("api/todos/")
 export class TodosController {
-	constructor(private readonly todosService: TodosService) {}
+	constructor(private readonly todosService: TodosService) {
+	}
 
 	@Get()
 	async findAll(): Promise<Todo[]> {

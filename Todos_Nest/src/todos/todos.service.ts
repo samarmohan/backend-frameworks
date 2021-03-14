@@ -1,12 +1,13 @@
-import { Injectable } from "@nestjs/common";
-import { Todo } from "./interfaces/todo.interface";
-import { Model } from "mongoose";
-import { InjectModel } from "@nestjs/mongoose";
-import { CreateTodoDTO } from "./dto/todo.dto";
+import {Injectable} from "@nestjs/common";
+import {Todo} from "./interfaces/todo.interface";
+import {Model} from "mongoose";
+import {InjectModel} from "@nestjs/mongoose";
+import {CreateTodoDTO} from "./dto/todo.dto";
 
 @Injectable()
 export class TodosService {
-	constructor(@InjectModel("Todo") private readonly todoModel: Model<Todo>) {}
+	constructor(@InjectModel("Todo") private readonly todoModel: Model<Todo>) {
+	}
 
 	async findAll(): Promise<Todo[]> {
 		return this.todoModel.find();

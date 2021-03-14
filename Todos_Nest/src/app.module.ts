@@ -1,7 +1,7 @@
-import { Module } from "@nestjs/common";
-import { MongooseModule } from "@nestjs/mongoose";
-import { TodoModule } from "./todos/todos.module";
-import { AppController } from "./app.controller";
+import {Module} from "@nestjs/common";
+import {MongooseModule} from "@nestjs/mongoose";
+import {TodoModule} from "./todos/todos.module";
+import {AppController} from "./app.controller";
 
 @Module({
 	imports: [
@@ -11,4 +11,5 @@ import { AppController } from "./app.controller";
 	controllers: [AppController],
 	providers: [],
 })
-export class AppModule {}
+export class AppModule {
+}
