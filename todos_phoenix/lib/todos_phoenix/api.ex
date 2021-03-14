@@ -1,104 +1,104 @@
 defmodule TodosPhoenix.Api do
-  @moduledoc """
-  The Api context.
-  """
+	@moduledoc """
+	The Api context.
+	"""
 
-  import Ecto.Query, warn: false
-  alias TodosPhoenix.Repo
+	import Ecto.Query, warn: false
+	alias TodosPhoenix.Repo
 
-  alias TodosPhoenix.Api.Todo
+	alias TodosPhoenix.Api.Todo
 
-  @doc """
-  Returns the list of todos.
+	@doc """
+	Returns the list of todos.
 
-  ## Examples
+	## Examples
 
-      iex> list_todos()
-      [%Todo{}, ...]
+	    iex> list_todos()
+	    [%Todo{}, ...]
 
-  """
-  def list_todos do
-    Repo.all(Todo)
-  end
+	"""
+	def list_todos do
+		Repo.all(Todo)
+	end
 
-  @doc """
-  Gets a single todo.
+	@doc """
+	Gets a single todo.
 
-  Raises `Ecto.NoResultsError` if the Todo does not exist.
+	Raises `Ecto.NoResultsError` if the Todo does not exist.
 
-  ## Examples
+	## Examples
 
-      iex> get_todo!(123)
-      %Todo{}
+	    iex> get_todo!(123)
+	    %Todo{}
 
-      iex> get_todo!(456)
-      ** (Ecto.NoResultsError)
+	    iex> get_todo!(456)
+	    ** (Ecto.NoResultsError)
 
-  """
-  def get_todo!(id), do: Repo.get!(Todo, id)
+	"""
+	def get_todo!(id), do: Repo.get!(Todo, id)
 
-  @doc """
-  Creates a todo.
+	@doc """
+	Creates a todo.
 
-  ## Examples
+	## Examples
 
-      iex> create_todo(%{field: value})
-      {:ok, %Todo{}}
+	    iex> create_todo(%{field: value})
+	    {:ok, %Todo{}}
 
-      iex> create_todo(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+	    iex> create_todo(%{field: bad_value})
+	    {:error, %Ecto.Changeset{}}
 
-  """
-  def create_todo(attrs \\ %{}) do
-    %Todo{}
-    |> Todo.changeset(attrs)
-    |> Repo.insert()
-  end
+	"""
+	def create_todo(attrs \\ %{}) do
+		%Todo{}
+		|> Todo.changeset(attrs)
+		|> Repo.insert()
+	end
 
-  @doc """
-  Updates a todo.
+	@doc """
+	Updates a todo.
 
-  ## Examples
+	## Examples
 
-      iex> update_todo(todo, %{field: new_value})
-      {:ok, %Todo{}}
+	    iex> update_todo(todo, %{field: new_value})
+	    {:ok, %Todo{}}
 
-      iex> update_todo(todo, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+	    iex> update_todo(todo, %{field: bad_value})
+	    {:error, %Ecto.Changeset{}}
 
-  """
-  def update_todo(%Todo{} = todo, attrs) do
-    todo
-    |> Todo.changeset(attrs)
-    |> Repo.update()
-  end
+	"""
+	def update_todo(%Todo{} = todo, attrs) do
+		todo
+		|> Todo.changeset(attrs)
+		|> Repo.update()
+	end
 
-  @doc """
-  Deletes a todo.
+	@doc """
+	Deletes a todo.
 
-  ## Examples
+	## Examples
 
-      iex> delete_todo(todo)
-      {:ok, %Todo{}}
+	    iex> delete_todo(todo)
+	    {:ok, %Todo{}}
 
-      iex> delete_todo(todo)
-      {:error, %Ecto.Changeset{}}
+	    iex> delete_todo(todo)
+	    {:error, %Ecto.Changeset{}}
 
-  """
-  def delete_todo(%Todo{} = todo) do
-    Repo.delete(todo)
-  end
+	"""
+	def delete_todo(%Todo{} = todo) do
+		Repo.delete(todo)
+	end
 
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking todo changes.
+	@doc """
+	Returns an `%Ecto.Changeset{}` for tracking todo changes.
 
-  ## Examples
+	## Examples
 
-      iex> change_todo(todo)
-      %Ecto.Changeset{data: %Todo{}}
+	    iex> change_todo(todo)
+	    %Ecto.Changeset{data: %Todo{}}
 
-  """
-  def change_todo(%Todo{} = todo, attrs \\ %{}) do
-    Todo.changeset(todo, attrs)
-  end
+	"""
+	def change_todo(%Todo{} = todo, attrs \\ %{}) do
+		Todo.changeset(todo, attrs)
+	end
 end

@@ -1,3 +1,3 @@
 defmodule TodosPhoenixWeb.PagesView do
-  use TodosPhoenixWeb, :view
+	use TodosPhoenixWeb, :view
 end

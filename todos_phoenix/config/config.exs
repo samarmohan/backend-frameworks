@@ -8,20 +8,30 @@
 use Mix.Config
 
 config :todos_phoenix,
-  ecto_repos: [TodosPhoenix.Repo]
+       ecto_repos: [TodosPhoenix.Repo]
 
 # Configures the endpoint
-config :todos_phoenix, TodosPhoenixWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "Vw2CAy9zaqKpRQ1oZARvasSxc0wE8/LUXlBQLOkBO1sSs1TpjKUZjeGerWHtLiGa",
-  render_errors: [view: TodosPhoenixWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: TodosPhoenix.PubSub,
-  live_view: [signing_salt: "z0MYsKtr"]
+config :todos_phoenix,
+       TodosPhoenixWeb.Endpoint,
+       url: [
+	       host: "localhost"
+       ],
+       secret_key_base: "Vw2CAy9zaqKpRQ1oZARvasSxc0wE8/LUXlBQLOkBO1sSs1TpjKUZjeGerWHtLiGa",
+       render_errors: [
+	       view: TodosPhoenixWeb.ErrorView,
+	       accepts: ~w(json),
+	       layout: false
+       ],
+       pubsub_server: TodosPhoenix.PubSub,
+       live_view: [
+	       signing_salt: "z0MYsKtr"
+       ]
 
 # Configures Elixir's Logger
-config :logger, :console,
-  format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+config :logger,
+       :console,
+       format: "$time $metadata[$level] $message\n",
+       metadata: [:request_id]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
