@@ -8,43 +8,43 @@ import java.util.Optional;
 @Service
 public class TodoService {
 
-    private final TodoRepository todoRepository;
+	private final TodoRepository todoRepository;
 
-    @Autowired
-    public TodoService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
+	@Autowired
+	public TodoService(TodoRepository todoRepository) {
+		this.todoRepository = todoRepository;
+	}
 
-    public Iterable<Todo> getTodos() {
-        return todoRepository.findAll();
-    }
+	public Iterable<Todo> getTodos() {
+		return todoRepository.findAll();
+	}
 
-    public Todo addTodo(Todo todo) {
-        return todoRepository.save(todo);
-    }
+	public Todo addTodo(Todo todo) {
+		return todoRepository.save(todo);
+	}
 
-    public void deleteTodo(Long todoId) {
-        boolean exists = todoRepository.existsById(todoId);
-        if (!exists) {
-            throw new IllegalStateException("Todo with id of " + todoId + " does not exist");
-        }
-        todoRepository.deleteById(todoId);
-    }
+	public void deleteTodo(Long todoId) {
+		boolean exists = todoRepository.existsById(todoId);
+		if (!exists) {
+			throw new IllegalStateException("Todo with id of " + todoId + " does not exist");
+		}
+		todoRepository.deleteById(todoId);
+	}
 
-    public Todo updateTodo(Long todoId, Todo todoDetails) {
-        Todo todo =
-                todoRepository
-                        .findById(todoId)
-                        .orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
+	public Todo updateTodo(Long todoId, Todo todoDetails) {
+		Todo todo =
+			todoRepository
+				.findById(todoId)
+				.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
 
-        todo.setName(todoDetails.getName());
-        todo.setIsComplete(todoDetails.getIsComplete());
-        return todoRepository.save(todo);
-    }
+		todo.setName(todoDetails.getName());
+		todo.setIsComplete(todoDetails.getIsComplete());
+		return todoRepository.save(todo);
+	}
 
-    public Todo getSingleTodo(Long todoId) {
-        return todoRepository
-                        .findById(todoId)
-                        .orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
-    }
+	public Todo getSingleTodo(Long todoId) {
+		return todoRepository
+			.findById(todoId)
+			.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
+	}
 }
