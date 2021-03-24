@@ -33,9 +33,9 @@ public class TodoService {
 
 	public Todo updateTodo(Long todoId, Todo todoDetails) {
 		Todo todo =
-			todoRepository
-				.findById(todoId)
-				.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
+				todoRepository
+						.findById(todoId)
+						.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
 
 		todo.setName(todoDetails.getName());
 		todo.setIsComplete(todoDetails.getIsComplete());
@@ -44,7 +44,7 @@ public class TodoService {
 
 	public Todo getSingleTodo(Long todoId) {
 		return todoRepository
-			.findById(todoId)
-			.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
+				.findById(todoId)
+				.orElseThrow(() -> new IllegalStateException("Todo with id of " + todoId + " does not exist"));
 	}
 }

@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
 		migrations.AddField(
 			model_name='todo',
 			name='name',
-			field=models.CharField(default=django.utils.timezone.now, max_length=255),
+			field=models.CharField(default=django.utils.timezone.now,
+			                       max_length=255),
 			preserve_default=False,
 		),
 	]

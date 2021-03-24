@@ -7,13 +7,13 @@ import javax.persistence.*;
 @Table
 public class Todo {
 	@SequenceGenerator(
-		name = "todos_springboot_seq",
-		sequenceName = "todos_springboot_seq",
-		allocationSize = 1
+			name = "todos_springboot_seq",
+			sequenceName = "todos_springboot_seq",
+			allocationSize = 1
 	)
 	@GeneratedValue(
-		strategy = GenerationType.SEQUENCE,
-		generator = "todos_springboot_seq"
+			strategy = GenerationType.SEQUENCE,
+			generator = "todos_springboot_seq"
 	)
 	@Id
 	private Long id;
