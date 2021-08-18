@@ -12,31 +12,51 @@ These are all for educational purposes. They do not accomplish any specific task
 They are all todo APIs (I know, I know) that have the same endpoints and functionality. They can GET, POST, PUT, and
 DELETE resources. They connect to different databases.
 
-#### Details
+#### Details and ⚙️ Setup ⚙️
 
 - ASP.NET Core
 
 	1. Connects to SQL Server LocalDB
 	2. Written in C#
 	3. Folder Name: Todos_ASPNETCORE
+	4. Setup: <br>
+	   a. Install [Visual Studio](https://visualstudio.microsoft.com/) with the ASP.NET and Web Development workload.
+	   SQL Server LocalDB will install with it. Windows and Mac only. <br>
+	   b. Run `dotnet watch` inside the folder and go to the url.
 
 - Django
 
 	1. Connects to PostgreSQL
 	2. Written in Python
 	3. Folder Name: Todos_Django
+	4. Setup: <br>
+	   a. Install [Python3](https://python.org/) for your OS. <br>
+	   b. Install [PostgreSQL](https://www.postgresql.org/download/) for your OS. <br>
+	   c. Go to [settings.py](Todos_Django/DjangoPY/settings.py) and customize the database settings. <br>
+	   d. Install `pipenv` and run `pipenv install`. <br>
+	   e. Run `python manage.py runserver`.
 
 - Express
 
 	1. Connects to MongoDB
 	2. Written in TypeScript
 	3. Folder Name: Todos_Express
+	4. Setup: <br>
+	   a. Install [Nodejs](http://nodejs.org/) for your OS. <br>
+	   b. Install [MongoDB](https://www.mongodb.com/3) for your OS. <br>
+	   c. Run `npm install` or `yarn` inside the folder to get all the deps. <br>
+	   d. Run `npm run dev` or `yarn run dev`.
 
 - Flask
 
 	1. Connects to SQLite
 	2. Written in Python
 	3. Folder Name: Todos_Flask
+	4. Setup: <br>
+	   a. Install [Python3](https://python.org/) for your OS. <br>
+	   b. Install `pipenv` and run `pipenv install`. <br>
+	   c. Go to [server.py](Todos_Flask/server.py) and customize the database settings. <br>
+	   d. Run `python manage.py runserver`.
 
 - Nest.js
 
